@@ -19,6 +19,7 @@ App.use(Express.static(Path.join(__dirname, "public")));
 Mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/budget", 
   {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false
   }

@@ -41,6 +41,17 @@
     <canvas id="myChart"></canvas>
   </div>
 
+  <script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+          .then( (registered) => {
+            console.log(`Your service worker has been registered:${registered}`);
+          })
+          .catch(error => console.log(`Service Worker registration failed:${error}`));
+      });
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="tempdb.js"></script>
   <script src="index.js"></script>
